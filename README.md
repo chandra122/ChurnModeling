@@ -12,13 +12,17 @@ Directory Structure
 
 notebooks/: Includes the Jupyter Notebook used for training and evaluating the model.
 scripts/: Contains the Python script (churn_predictor.py) for predicting churn probabilities on new datasets.
-data/: Holds the datasets, specifically your_data.csv for model training and new_churn_data.csv for testing.
+data/: Holds the datasets, specifically prepared_data.csv for model training and new_churn_data.csv for testing.
 README.md: This file, providing an overview of the project.
 Installation
 
 To set up the environment and run this project, ensure you have Python installed and then execute:
 
-pip install pycaret pandas
+conda create -n pycaret_env python=3.10.4 -y
+
+conda activate pycaret_env
+
+pip install pycaret
 
 Usage
 
@@ -32,8 +36,8 @@ Making Predictions
 Use the Python script churn_predictor.py in the scripts/ directory to predict churn probabilities on new data:
 
 Ensure new_churn_data.csv is present in the data/ directory.
-Run the script:
-python scripts/churn_predictor.py
+Run the jupyter notebook:
+week5_assignment_started.ipynb
 
 This will output the churn probabilities for each entry in the test dataset.
 
