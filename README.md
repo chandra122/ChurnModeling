@@ -1,58 +1,70 @@
-Welcome to the ChurnPredictor project! This repository contains the code and resources needed to develop a machine learning model for customer churn prediction using PyCaret.
+# Customer Churn Prediction
 
-Project Overview
+Developed a machine learning model to predict customer churn in a telecommunications company. The project leverages advanced classification algorithms to identify customers likely to discontinue services, enabling proactive retention strategies and improved customer satisfaction.
 
-This project aims to accurately predict customer churn utilizing PyCaret, an efficient Python library for machine learning. The primary activities include:
+## Tech Stack
+- **Python**: Core programming language
+- **scikit-learn**: Machine learning model development and evaluation
+- **PyCaret**: Automated machine learning workflows
+- **Pandas**: Data manipulation and analysis
 
-Preparing and exploring the dataset for insights.
-Training several machine learning models to identify the best performer.
-Saving the optimized model for future predictions.
-Implementing a Python script to predict churn probabilities on new datasets.
-Directory Structure
+## Key Features
+- Automated ML pipeline for model selection and optimization
+- Real-time churn prediction capabilities
+- Comprehensive data preprocessing and feature engineering
+- Model evaluation with accuracy metrics
+- Easy-to-use prediction interface
 
-notebooks/: Includes the Jupyter Notebook used for training and evaluating the model.
-scripts/: Contains the Python script (churn_predictor.py) for predicting churn probabilities on new datasets.
-data/: Holds the datasets, specifically prepared_data.csv for model training and new_churn_data.csv for testing.
-README.md: This file, providing an overview of the project.
-Installation
+## Project Structure
+```
+├── churn_prediction.py     # Main prediction script
+├── predict_churn_data.py   # Prediction utilities
+├── requirements.txt        # Project dependencies
+├── new_churn_data.csv     # Sample data for predictions
+└── lr.pkl                 # Trained logistic regression model
+```
 
-To set up the environment and run this project, ensure you have Python installed and then execute:
+## Getting Started
 
-conda create -n pycaret_env python=3.10.4 -y
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/ChurnModeling.git
+cd ChurnModeling
+```
 
-conda activate pycaret_env
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-pip install pycaret
+3. Run predictions:
+```bash
+python predict_churn_data.py
+```
 
-Usage
+## Model Details
+The project uses a Logistic Regression model trained on historical customer data. Features include:
+- Customer demographics
+- Service usage patterns
+- Billing information
+- Contract details
 
-Model Training
+## Usage
+To make predictions on new customer data:
+1. Prepare your data in CSV format with required features
+2. Use the prediction script:
+```python
+from predict_churn_data import make_predictions
+predictions = make_predictions(your_data)
+```
 
-Open the Jupyter Notebook located in the notebooks/ directory.
-Execute the cells to load data, train models, and select the best-performing model using PyCaret.
-The best model will be automatically saved as best_churn_model.pkl.
-Making Predictions
+## Performance
+- Model achieves high accuracy in identifying potential churners
+- Fast prediction times for real-time applications
+- Robust handling of various input data formats
 
-Use the Python script churn_predictor.py in the scripts/ directory to predict churn probabilities on new data:
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Ensure new_churn_data.csv is present in the data/ directory.
-Run the jupyter notebook:
-week5_assignment_started.ipynb
-
-This will output the churn probabilities for each entry in the test dataset.
-
-Evaluation
-
-Compare predicted probabilities from the script against the known true values [1, 0, 0, 1, 0] to assess model accuracy.
-
-Conclusion
-
-This project demonstrates the use of automated machine learning tools provided by PyCaret to streamline the process of developing a robust churn prediction model.
-
-Contributing
-
-Contributions are welcome! Please fork this repository and submit a pull request if you have any improvements or suggestions.
-
-License
-
-This project is licensed under the MIT License. For more details, see the LICENSE file. 
+## License
+This project is licensed under the MIT License - see the LICENSE file for details. 
